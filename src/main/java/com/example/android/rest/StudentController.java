@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -36,8 +38,14 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public Student detail(@PathVariable("id") int id) {
+    public Student detail(@PathVariable("id") int id, HttpServletRequest request) {
         log.info("detail id {}", id);
+        final Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            final String headerName = headerNames.nextElement();
+            final String headerValue = request.getHeader(headerName);
+            log.info("header: {}:{}", headerName, headerValue);
+        }
         try {
             TimeUnit.SECONDS.sleep((int) (Math.random() * 10) + 1);
         } catch (Exception e) {
