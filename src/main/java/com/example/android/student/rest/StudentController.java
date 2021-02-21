@@ -1,6 +1,6 @@
-package com.example.android.rest;
+package com.example.android.student.rest;
 
-import com.example.android.model.Student;
+import com.example.android.student.model.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,7 +47,8 @@ public class StudentController {
             log.info("header: {}:{}", headerName, headerValue);
         }
         try {
-            TimeUnit.SECONDS.sleep((int) (Math.random() * 10) + 1);
+            // [1,5]
+            TimeUnit.SECONDS.sleep((int) (Math.random() * 5) + 1);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +59,8 @@ public class StudentController {
     public Collection<Student> list() {
         log.info("student all");
         try {
-            TimeUnit.SECONDS.sleep((int) (Math.random() * 10) + 1);
+            // [1,5]
+            TimeUnit.SECONDS.sleep((int) (Math.random() * 5) + 1);
         } catch (Exception e) {
             e.printStackTrace();
         }

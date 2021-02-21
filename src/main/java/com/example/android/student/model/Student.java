@@ -1,4 +1,4 @@
-package com.example.android.model;
+package com.example.android.student.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
