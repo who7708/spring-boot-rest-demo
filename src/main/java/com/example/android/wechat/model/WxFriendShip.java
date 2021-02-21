@@ -49,3 +49,16 @@ public class WxFriendShip {
     @Column(name = "update_time")
     private Date updateTime;
 }
+// CREATE TABLE `wx_friend_ship` (
+//   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+//   `pid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '用户id，对应wx_user.id',
+//   `cid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '好友id，对应wx_user.id',
+//   `mark_name` varchar(50) NOT NULL DEFAULT '' COMMENT '备注名称',
+//   `message` varchar(50) NOT NULL DEFAULT '' COMMENT '加好友时的备注',
+//   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '好友状态，0-正常，1-取消',
+//   `delete_flag` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除状态，0-未删除，1-已删除',
+//   `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+//   `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+//   PRIMARY KEY (`id`),
+//   KEY `uk_pid_cid` (`pid`,`cid`)
+// ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;

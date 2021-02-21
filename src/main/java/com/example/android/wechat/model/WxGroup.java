@@ -50,9 +50,10 @@ public class WxGroup implements Serializable {
 //   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '群组id。group.id',
 //   `name` varchar(50) NOT NULL DEFAULT '' COMMENT '群名称',
 //   `owner` bigint(20) NOT NULL DEFAULT '0' COMMENT '群主',
+//   `portrait_uri` varchar(100) NOT NULL DEFAULT 'group.png' COMMENT '群头像',
 //   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '群组状态，0-正常，1-取消',
 //   `delete_flag` tinyint(4) NOT NULL DEFAULT '0' COMMENT '删除状态，0-未删除，1-已删除',
 //   `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
 //   `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
 //   PRIMARY KEY (`id`)
-// ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+// ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
